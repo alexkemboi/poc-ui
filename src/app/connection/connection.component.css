@@ -1,0 +1,167 @@
+.heading {
+    margin-left: 20px;
+}
+
+.components {
+    position: absolute;
+}
+
+.form-control {
+    width: 500px;
+    height: 35px;
+    border: solid grey 1px;
+    margin-right: 20px;
+}
+
+.btn {
+    height: 45px;
+    width: 100px;
+    color: blue
+}
+
+.left {
+    position: absolute;
+    top: 0;
+    left: 50;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 900px;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    bottom: 0;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.patientbtn {
+    color: #1976d2;
+    width: 150px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    height: 50px;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: white;
+    border: solid black 1px;
+}
+
+.d-flex {
+    margin: 50px;
+}
+
+.content {
+    border: solid black 0.1px;
+    width: 150px;
+    position: absolute;
+    height: 800px;
+    top: 0;
+    left: 5;
+    margin-left: 10px;
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right {
+    position: absolute;
+    top: 80px;
+    right: 2px;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 900px;
+    border: solid black 1px;
+    background-color: light;
+    width: 1630px;
+    height: 800px;
+    color: black;
+}
+
+.footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    bottom: 0px;
+    background-color: #1976d2;
+    height: 10px;
+}
+
+.customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    position: absolute;
+    right: 0;
+}
+
+.customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.customers tr:hover {
+    background-color: #ddd;
+    width: 50px;
+}
+
+.customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #1976d2;
+    color: white;
+}
+
+.tablehead {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1976d2;
+    color: white;
+    width: 100%;
+}
+
+.labelcss {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+    color: white;
+    margin: .4rem 0;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.reportcss {
+    background-color: rgb(145, 145, 145);
+    height: 50px;
+    width: 100%;
+    display: flex;
+}
+
+.inputcss {
+    margin: .4rem 0;
+    width: 300px;
+    height: 35px;
+    margin-left: 10px;
+}

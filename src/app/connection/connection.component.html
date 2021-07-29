@@ -1,0 +1,108 @@
+<p>connection works!</p>
+<div class="toolbar" role="banner">
+
+    <h1 class="heading">AMPATH PLUS POC</h1>
+    <div class="spacer"> </div>
+    <form class="d-flex">
+        <input name="name" class="form-control me-2" type="search" [(ngModel)]="name" placeholder="Search" aria-label="Search">
+        <button id='searchbtn' class="btn btn-outline-light text-light" type="button" (click)='searchPatient()'>Search</button>
+    </form>
+
+</div>
+<div class="left">
+    <div class="content">
+        <button class='patientbtn' type="button" (click)='getPatientDetails()'>Patient List</button>
+        <button class='patientbtn' type="button" (click)="showReport()">Show Report</button>
+    </div>
+
+
+</div>
+<div class="right">
+    <div class="reportcss" *ngIf="viewReport">
+        <label for="start" class="labelcss">Choose month to view report:</label>
+        <input class="inputcss" type="month" [(ngModel)]="months" id="start" (change)="report()" name="start" min="1900-03" value="2021-05"> </div>
+    <h3 *ngIf="status"> PATIENT LIST</h3>
+    <table class="customers" *ngIf="status">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <td>{{patient.patientId}}</td>
+                <td>{{patient.name}}</td>
+                <td>{{patient.dob}}</td>
+                <td>{{patient.gender}}</td>
+                <td>{{patient.phone_number}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 *ngIf="reportstatus"> MONTHLY REPORT</h3>
+    <table class="customers" *ngIf="reportstatus">
+
+        <thead>
+
+            <tr>
+                <th>Month</th>
+                <th>Location</th>
+                <th>Negative</th>
+                <th>Positive</th>
+                <th>Unknowns</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <td>{{patient.encounter_datetime}}</td>
+                <td>{{patient.location}}</td>
+                <td (click)="statusreport('negative')">{{patient.negative}}</td>
+                <td (click)="statusreport('positive')">{{patient.positive}}</td>
+                <td (click)="statusreport('unknown')">{{patient.unknowns}}</td>
+                {{patientstatus}}
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <table class="customers" *ngIf="reportstatusspecific">
+
+        <thead>
+
+            <tr>
+                <th>Patient id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Phone number</th>
+                <th>Date of birth</th>
+                <th>HIV status</th>
+                <th>Encounter Date and time</th>
+                <th>Location</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <td>{{patient.patientId}}</td>
+                <td>{{patient.name}}</td>
+                <td>{{patient.gender}}</td>
+                <td>{{patient.phone_number}}</td>
+                <td>{{patient.dob}}</td>
+                <td>{{patient.hiv_status}}</td>
+                <td>{{patient.encounter_datetime}}</td>
+                <td>{{patient.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+<div class="footer">
+
+</div>
