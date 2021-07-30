@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+ 
 import { ServiceService } from '../services/service.service';
-
+ 
 @Component({
   selector: 'app-connection',
   templateUrl: './connection.component.html',
@@ -15,6 +16,7 @@ export class ConnectionComponent implements OnInit {
   reportstatusspecific:boolean=false;
   months="";
   patientstatus:string="";
+  error=false;
   constructor(private service: ServiceService) { }
 
   ngOnInit(): void {
@@ -22,27 +24,40 @@ export class ConnectionComponent implements OnInit {
   }
 
   getPatientDetails = () => {
+    this.error=false;
+    this.reportstatusspecific=false;
     this.viewReport=false;
     this.reportstatus=false;
-    this.status=true;
     this.service.getPatientList().subscribe((response) => {
-      this.patients = response;
-      console.log(response);
+      if(response.length<=0){
+        this.error=true;
+      }else{
+        this.patients = response;
+        this.status=true;
+      }
 
 
     })
   }
  searchPatient = () => {  
+  this.error=false;
   this.viewReport=false;
   this.reportstatus=false;
   this.status=false;
    if(this.name===""){
      alert("Please enter a name to search");
    }  else{
-  this.status=true;
+    
+
   this.reportstatusspecific=false;
     this.service.searchPatient(this.name).subscribe((response) => {
-      this.patients = response;
+      if(response.length<=0){
+        this.error=true;
+      }else{
+        this.patients = response;
+        this.status=true;
+      }
+      
       
 
     })
@@ -55,23 +70,35 @@ showReport = () => {
 
 }
 report=()=>{
-  this.reportstatus=true;
+  this.error=false;
   this.reportstatusspecific=false;
   this.service.showReport(this.months).subscribe((response) => {
-    this.patients = response; 
+    if(response.length<=0){
+      this.error=true;
+    }else{
+      this.patients = response;
+      this.reportstatus=true;
+    }
   
 }
 ) 
 }
 
-statusreport=(patientstatus:string)=>{
+statusreport=(patientstatus:string,months:string)=>{
+  this.error=false;
   this.reportstatusspecific=true;
   this.viewReport=false;
   this.reportstatus=false;
   this.status=false;
-  this.service.statusReport(patientstatus).subscribe((response) => {
-    this.patients = response; 
-  console.log(this.patients);
+  this.error=false;
+  this.service.statusReport(patientstatus,months).subscribe((response) => {
+    if(response.length<=0){
+      this.error=true;
+    }else{
+      this.patients = response;
+      this.reportstatusspecific=true;
+    }
+
 }
 ) 
 }

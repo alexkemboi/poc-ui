@@ -13,21 +13,6 @@
     margin-right: 20px;
 }
 
-.btn {
-    height: 45px;
-    width: 100px;
-    color: blue
-}
-
-.left {
-    position: absolute;
-    top: 0;
-    left: 50;
-    margin-left: 10px;
-    margin-top: 10px;
-    height: 900px;
-}
-
 .toolbar {
     position: absolute;
     top: 0;
@@ -40,6 +25,7 @@
     color: white;
     font-weight: 600;
     bottom: 0;
+    background-image: url("./BlueBkgd.png");
 }
 
 .spacer {
@@ -47,28 +33,28 @@
 }
 
 .patientbtn {
-    color: #1976d2;
+    color: white;
     width: 150px;
     margin-bottom: 5px;
     margin-top: 30px;
-    height: 50px;
-    font-weight: bolder;
-    font-size: 20px;
-    background-color: white;
+    height: 40px;
+    font-size: 15px;
     border: solid black 1px;
+    background-color: grey;
 }
 
 .d-flex {
     margin: 50px;
+    margin-top: 70px;
 }
 
 .content {
     border: solid black 0.1px;
-    width: 150px;
+    width: 130px;
     position: absolute;
     height: 800px;
-    top: 0;
-    left: 5;
+    top: 9px;
+    left: 0.5;
     margin-left: 10px;
     display: flex;
     margin: 82px auto 32px;
@@ -76,38 +62,41 @@
     max-width: 960px;
     flex-direction: column;
     align-items: center;
+    background-image: url("./BlueBkgd.png");
+}
+
+.errorcss {
+    color: red;
+}
+
+.tablecss {
+    left: 5px;
+    right: 5px;
+    margin: 5px;
+    background-color: hotpink;
 }
 
 .right {
     position: absolute;
     top: 80px;
-    right: 2px;
+    right: 0.5px;
     margin-left: 10px;
     margin-top: 10px;
     height: 900px;
     border: solid black 1px;
     background-color: light;
-    width: 1630px;
+    width: 1670px;
     height: 800px;
     color: black;
-}
-
-.footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-    bottom: 0px;
-    background-color: #1976d2;
-    height: 10px;
 }
 
 .customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 90%;
     position: absolute;
-    right: 0;
+    right: 5;
+    margin: 5px;
 }
 
 .customers td,
@@ -125,11 +114,25 @@
     width: 50px;
 }
 
+.headingcss {
+    position: relative;
+    font-weight: bolder;
+    color: white;
+    width: 100%;
+    background-color: grey;
+    display: flex;
+}
+
+.headingcss.h3 {
+    align-content: center;
+    right: 0px;
+}
+
 .customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #1976d2;
+    background-image: url("./BlueBkgd.png");
     color: white;
 }
 
@@ -164,4 +167,11 @@
     width: 300px;
     height: 35px;
     margin-left: 10px;
+}
+
+.btn {
+    height: 40px;
+    background-color: grey;
+    width: 100px;
+    color: white;
 }

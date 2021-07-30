@@ -29,9 +29,9 @@ const params=new HttpParams().set("months",months);
   
 }
 
-statusReport(patientstatus:string):Observable<[]>{
+statusReport(patientstatus:string,months:string):Observable<[]>{
   const reporturl='http://localhost:8003/patientlistreport';
-const params=new HttpParams().set("patientstatus",patientstatus);
+const params=new HttpParams().set("patientstatus",patientstatus).set("months",months);
   return this.httpClient.get<[]>(reporturl,{params:params})
   
 }
